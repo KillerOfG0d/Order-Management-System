@@ -20,27 +20,38 @@ A Java EE RESTful API for managing orders, stock movements, items, and users.
 ## Setup
 
 1. Clone the repository
+
 git clone https://github.com/yourusername/order-manager-api.git
 cd order-manager-api
 
 2. Create a PostgreSQL database
+
 createdb ordermanager
 
 3. Configure the database connection in `src/main/resources/application.properties`
+
 spring.datasource.url=jdbc:postgresql://localhost:5432/ordermanager
+
 spring.datasource.username=your_username
+
 spring.datasource.password=your_password
 
 4. Configure email settings in `src/main/resources/application.properties`
+
 spring.mail.host=your_smtp_server
+
 spring.mail.port=your_smtp_port
+
 spring.mail.username=your_email
+
 spring.mail.password=your_email_password
 
 5.  Build the project
+
 mvn clean install
 
 6. Run the application
+
 mvn spring-boot:run
 
 ## API Endpoints
