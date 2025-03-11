@@ -32,22 +32,22 @@ createdb ordermanager
 
 3. Configure the database connection in `src/main/resources/application.properties`
 
-spring.datasource.url=jdbc:postgresql://localhost:5432/ordermanager
+spring.datasource.url=jdbc:postgresql://<host>/ordermanager
 
-spring.datasource.username=your_username
+spring.datasource.username=<your_username>
 
-spring.datasource.password=your_password
+spring.datasource.password=<your_password>
 
 
 4. Configure email settings in `src/main/resources/application.properties`
 
-spring.mail.host=your_smtp_server
+spring.mail.host=<your_smtp_server>
 
-spring.mail.port=your_smtp_port
+spring.mail.port=<your_smtp_port>
 
-spring.mail.username=your_email
+spring.mail.username=<your_email>
 
-spring.mail.password=your_email_password
+spring.mail.password=<your_email_password>
 
 
 5.  Build the project
@@ -70,6 +70,13 @@ mvn spring-boot:run
 - `PUT /api/items/{id}` - Update an item
 - `DELETE /api/items/{id}` - Delete an item
 
+Example request ITEM body for POST/PUT:
+```json
+{
+  "name": "Laptop"
+}
+```
+
 ### Users
 
 - `GET /api/users` - Get all users
@@ -77,6 +84,14 @@ mvn spring-boot:run
 - `POST /api/users` - Create a new order
 - `PUT /api/users/{id}` - Update a user
 - `DELETE /api/users/{id}` - Delete a user
+
+Example request USER body for POST/PUT:
+```json
+{
+  "name": "João Deus",
+  "email": "joao.deus@example.com"
+}
+```
 
 ### Orders
 
@@ -86,6 +101,15 @@ mvn spring-boot:run
 - `PUT /api/orders/{id}` - Update an order
 - `DELETE /api/orders/{id}` - Delete an order
 
+Example request ORDERS body for POST/PUT:
+```json
+{
+  "itemId": 1,
+  "userId": 1,
+  "quantity": 5
+}
+```
+  
 ### Stock Movements
 
 - `GET /api/stock-movements` - Get all stock movements
@@ -93,3 +117,11 @@ mvn spring-boot:run
 - `POST /api/stock-movements` - Create a new stock movement
 - `PUT /api/stock-movements/{id}` - Update a stock movement
 - `DELETE /api/stock-movements/{id}` - Delete a stock movement
+
+Example request STOCK MOVEMENTS body for POST/PUT:
+```json
+{
+  "itemId": 1,
+  "quantity": 10
+}
+```
