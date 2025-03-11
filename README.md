@@ -22,6 +22,7 @@ A Java EE RESTful API for managing orders, stock movements, items, and users.
 1. Clone the repository
 
 git clone https://github.com/yourusername/order-manager-api.git
+
 cd order-manager-api
 
 
